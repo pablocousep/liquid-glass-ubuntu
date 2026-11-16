@@ -1,0 +1,1073 @@
+/* ==========================================================================
+   Liquid Glass oscuro — capa de estilo
+   El cristal (desenfoque + refracción + tinte negro) lo dibuja blur-my-shell;
+   aquí sólo formas, contraste y brillos sutiles. Nada de bordes en cada
+   control: el brillo va en el contorno de la superficie, como en la web.
+   ========================================================================== */
+
+/* ---------- Barra superior ---------- */
+
+#panel.lg-panel,
+#panel.lg-panel:overview {
+  /* Píldora flotante oscura, igual que el dock. El radio lo pone
+     blur-my-shell (corner-radius 999 → mitad de la altura). */
+  background-color: rgba(0, 0, 0, 0.30) !important; /* iguala el tono del dock */
+  background-gradient-direction: none !important;
+  margin: 6px 8px 0 8px;
+  padding: 0 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+#panel.lg-panel .panel-button {
+  color: rgba(255, 255, 255, 0.94);
+  border-radius: 999px;
+  background-color: transparent;
+  box-shadow: none !important;
+  transition-duration: 160ms;
+}
+
+#panel.lg-panel .panel-button:hover {
+  background-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+#panel.lg-panel .panel-button:active,
+#panel.lg-panel .panel-button:checked {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+#panel.lg-panel .panel-button .clock {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ---------- Dock (dash-to-dock) ---------- */
+
+#dashtodockContainer #dash .dash-background,
+#dashtodockContainer .dash-background {
+  background-color: rgba(72, 72, 80, 0.28) !important;
+  border-radius: 26px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+#dashtodockContainer .dash-item-container .overview-tile .overview-icon,
+#dashtodockContainer .dash-item-container .show-apps .overview-icon {
+  border-radius: 16px;
+  transition-duration: 160ms;
+}
+
+#dashtodockContainer .dash-item-container .overview-tile:hover .overview-icon,
+#dashtodockContainer .dash-item-container .show-apps:hover .overview-icon {
+  background-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+#dashtodockContainer .app-running-dot {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.dash-label {
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(64, 64, 72, 0.88);
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Superficies emergentes (menús, ajustes, calendario) ---------- */
+
+.popup-menu-content,
+.candidate-popup-content {
+  color: #ffffff;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(54, 54, 62, 0.84) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10), 0 10px 30px 0 rgba(0, 0, 0, 0.40);
+}
+
+.popup-menu-item {
+  border-radius: 12px;
+}
+
+.popup-menu-item:hover,
+.popup-menu-item:focus,
+.popup-menu-item:active,
+.popup-menu-item.selected {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.popup-separator-menu-item .popup-separator-menu-item-separator {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.popup-sub-menu {
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ---------- Ajustes rápidos ---------- */
+
+.quick-settings {
+  border-radius: 32px;
+}
+
+/* Interruptores: una sola píldora; si tienen menú, el interruptor y la
+   flecha forman las dos mitades de la misma píldora. */
+.quick-toggle {
+  border: none !important;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none !important;
+}
+
+.quick-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+/* GNOME 50 no expone :ltr en estos actores; usamos la posición. */
+.quick-toggle-has-menu .quick-toggle,
+.quick-toggle-has-menu .quick-toggle:first-child {
+  border-radius: 999px 0 0 999px !important;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button,
+.quick-toggle-has-menu .quick-toggle-menu-button:last-child {
+  border-radius: 0 999px 999px 0 !important;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button,
+.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.quick-toggle-has-menu .quick-toggle-separator {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.10);
+}
+
+.quick-toggle-has-menu:checked .quick-toggle-separator {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.quick-toggle-menu {
+  border: none;
+  border-radius: 22px;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none;
+}
+
+.quick-settings .icon-button,
+.quick-settings .button {
+  border: none !important;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.07);
+  box-shadow: none !important;
+}
+
+.quick-settings .icon-button:hover,
+.quick-settings .button:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.slider {
+  -barlevel-height: 4px;
+  -barlevel-background-color: rgba(255, 255, 255, 0.14);
+  -barlevel-active-background-color: rgba(255, 255, 255, 0.90);
+  -slider-handle-radius: 8px;
+  color: #ffffff;
+}
+
+/* ---------- Calendario y notificaciones ---------- */
+
+.datemenu-popover {
+  border-radius: 30px;
+}
+
+.message-list {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.datemenu-today-button,
+.events-button,
+.world-clocks-button,
+.weather-button,
+.message {
+  border: none;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none;
+}
+
+.datemenu-today-button:hover,
+.events-button:hover,
+.world-clocks-button:hover,
+.weather-button:hover,
+.message:hover {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+.notification-banner {
+  color: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(54, 54, 62, 0.84) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10), 0 10px 30px 0 rgba(0, 0, 0, 0.40);
+}
+
+.notification-banner .message,
+.notification-banner .message:hover {
+  border: none;
+  background-color: transparent !important;
+}
+
+.message .message-close-button,
+.message .message-expand-button,
+.message-notification-group .message-collapse-button {
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.message-list-clear-button,
+.dnd-button {
+  border-radius: 999px;
+}
+
+/* ---------- OSD, Alt+Tab, diálogos ---------- */
+
+.osd-window,
+.switcher-list,
+.workspace-switcher,
+.resize-popup,
+.modal-dialog,
+.end-session-dialog,
+.run-dialog {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(54, 54, 62, 0.84) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10), 0 10px 30px 0 rgba(0, 0, 0, 0.40);
+}
+
+.osd-window { border-radius: 999px; }
+.switcher-list,
+.workspace-switcher { border-radius: 28px; }
+.modal-dialog,
+.end-session-dialog,
+.run-dialog { border-radius: 28px; }
+
+.switcher-list .item-box {
+  border-radius: 18px;
+  background-color: transparent !important;
+}
+
+.switcher-list .item-box:selected,
+.switcher-list .item-box:hover {
+  background-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+.modal-dialog .modal-dialog-button-box {
+  background-color: transparent !important;
+  border: none;
+}
+
+.modal-dialog .modal-dialog-linked-button {
+  border: none;
+  border-radius: 999px !important;
+  margin: 0 4px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.modal-dialog .modal-dialog-linked-button:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- Vista general ---------- */
+
+.search-entry {
+  border-radius: 999px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(64, 64, 72, 0.45) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+.search-entry:focus,
+.search-entry:hover {
+  background-color: rgba(80, 80, 88, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.search-section-content,
+.list-search-results {
+  border: none;
+  border-radius: 22px;
+  background-color: rgba(64, 64, 72, 0.45) !important;
+}
+
+.app-folder-dialog {
+  border-radius: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(64, 64, 72, 0.50) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+.overview-tile:hover .overview-icon,
+.overview-tile:focus .overview-icon,
+.overview-tile:selected .overview-icon {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.app-folder .overview-icon {
+  background-color: rgba(64, 64, 72, 0.40) !important;
+}
+
+.window-caption {
+  border-radius: 999px;
+  color: #ffffff;
+  border: none;
+  background-color: rgba(64, 64, 72, 0.80) !important;
+}
+
+/* ==========================================================================
+   Modo claro (la extensión pone .lg-light en uiGroup)
+   Cristal gris perla; texto oscuro; brillos y bordes más suaves.
+   ========================================================================== */
+
+.lg-light #panel.lg-panel {
+  border-color: rgba(255, 255, 255, 0.30);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+.lg-light #panel.lg-panel .panel-button {
+  color: #1c1c20;
+}
+
+.lg-light #panel.lg-panel .panel-button:hover {
+  background-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+.lg-light #panel.lg-panel .panel-button:active,
+.lg-light #panel.lg-panel .panel-button:checked {
+  background-color: rgba(0, 0, 0, 0.11) !important;
+}
+
+.lg-light #dashtodockContainer #dash .dash-background,
+.lg-light #dashtodockContainer .dash-background {
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.30) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+.lg-light #dashtodockContainer .dash-item-container .overview-tile:hover .overview-icon,
+.lg-light #dashtodockContainer .dash-item-container .show-apps:hover .overview-icon {
+  background-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+.lg-light #dashtodockContainer .app-running-dot {
+  background-color: rgba(28, 28, 32, 0.85);
+}
+
+.lg-light .dash-label,
+.lg-light .window-caption {
+  color: #1c1c20;
+  border-color: rgba(0, 0, 0, 0.06);
+  background-color: rgba(248, 248, 250, 0.92) !important;
+}
+
+/* Texto oscuro en todas las superficies de cristal */
+.lg-light .popup-menu-content,
+.lg-light .candidate-popup-content,
+.lg-light .notification-banner,
+.lg-light .osd-window,
+.lg-light .switcher-list,
+.lg-light .workspace-switcher,
+.lg-light .resize-popup,
+.lg-light .modal-dialog,
+.lg-light .end-session-dialog,
+.lg-light .run-dialog,
+.lg-light .search-entry {
+  color: #1c1c20;
+}
+
+.lg-light .popup-menu-item,
+.lg-light .popup-menu-item StLabel,
+.lg-light .quick-toggle,
+.lg-light .quick-toggle StLabel,
+.lg-light .quick-toggle StIcon,
+.lg-light .quick-settings .icon-button,
+.lg-light .quick-settings .button,
+.lg-light .quick-toggle-has-menu .quick-toggle-menu-button,
+.lg-light .message,
+.lg-light .message StLabel,
+.lg-light .switcher-list .item-box,
+.lg-light .slider {
+  color: #1c1c20;
+}
+
+.lg-light .popup-menu-item:hover,
+.lg-light .popup-menu-item:focus,
+.lg-light .popup-menu-item:active,
+.lg-light .popup-menu-item.selected {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.lg-light .popup-separator-menu-item .popup-separator-menu-item-separator {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.lg-light .popup-sub-menu,
+.lg-light .quick-toggle-menu {
+  background-color: rgba(255, 255, 255, 0.30) !important;
+}
+
+.lg-light .quick-toggle,
+.lg-light .quick-settings .icon-button,
+.lg-light .quick-settings .button,
+.lg-light .quick-toggle-has-menu .quick-toggle-menu-button,
+.lg-light .quick-settings .quick-toggle-has-menu .quick-toggle-menu-button {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.lg-light .quick-toggle:hover,
+.lg-light .quick-settings .icon-button:hover,
+.lg-light .quick-settings .button:hover,
+.lg-light .quick-toggle-has-menu .quick-toggle-menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.70);
+}
+
+
+.lg-light .quick-toggle-has-menu .quick-toggle-separator {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.lg-light .slider {
+  -barlevel-background-color: rgba(0, 0, 0, 0.12);
+  -barlevel-active-background-color: rgba(28, 28, 32, 0.85);
+}
+
+.lg-light .datemenu-today-button,
+.lg-light .events-button,
+.lg-light .world-clocks-button,
+.lg-light .weather-button,
+.lg-light .message {
+  background-color: rgba(255, 255, 255, 0.40) !important;
+}
+
+.lg-light .datemenu-today-button:hover,
+.lg-light .events-button:hover,
+.lg-light .world-clocks-button:hover,
+.lg-light .weather-button:hover,
+.lg-light .message:hover {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.lg-light .message-list {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.lg-light .message .message-close-button,
+.lg-light .message .message-expand-button,
+.lg-light .message-notification-group .message-collapse-button {
+  color: #1c1c20;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.lg-light .switcher-list .item-box:selected,
+.lg-light .switcher-list .item-box:hover {
+  background-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+.lg-light .modal-dialog .modal-dialog-linked-button {
+  color: #1c1c20;
+  background-color: rgba(255, 255, 255, 0.50);
+}
+
+.lg-light .modal-dialog .modal-dialog-linked-button:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.lg-light .search-entry {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.7) !important;
+}
+
+.lg-light .search-section-content,
+.lg-light .list-search-results {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.lg-light .app-folder-dialog {
+  border-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(240, 240, 244, 0.45) !important;
+}
+
+/* Texto e iconos de la barra y las notificaciones en modo claro */
+.lg-light #panel.lg-panel .panel-button,
+.lg-light #panel.lg-panel .panel-button StLabel,
+.lg-light #panel.lg-panel .panel-button StIcon,
+.lg-light #panel.lg-panel .panel-button .clock,
+.lg-light #panel.lg-panel .panel-button .system-status-icon,
+.lg-light #panel.lg-panel .workspace-dot {
+  color: #1c1c20 !important;
+}
+
+.lg-light #panel.lg-panel .workspace-dot {
+  background-color: rgba(28, 28, 32, 0.80) !important;
+}
+
+.lg-light .notification-banner StLabel,
+.lg-light .notification-banner StIcon,
+.lg-light .message StLabel,
+.lg-light .message StIcon,
+.lg-light .message .message-title,
+.lg-light .message .message-body,
+.lg-light .message .message-source-title,
+.lg-light .message .message-header {
+  color: #1c1c20 !important;
+}
+
+
+/* ==========================================================================
+   Interruptores activos: cristal iluminado en lugar del azul de acento.
+   (selectores reforzados para ganar a blur-my-shell, que fuerza el acento)
+   ========================================================================== */
+
+.popup-menu-content.quick-settings .quick-toggle:checked,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked,
+.popup-menu-content.quick-settings .quick-toggle:checked:focus,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked:focus,
+.popup-menu-content.quick-settings .quick-toggle:focus:checked,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:focus:checked {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30) !important;
+}
+
+.popup-menu-content.quick-settings .quick-toggle:checked:hover,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked:hover,
+.popup-menu-content.quick-settings .quick-toggle:hover:checked,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:hover:checked,
+.popup-menu-content.quick-settings .quick-toggle:checked:active,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked:active,
+.popup-menu-content.quick-settings .quick-toggle:active:checked,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:active:checked {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.27) !important;
+  box-shadow: inset 0 0 16px 0 rgba(255, 255, 255, 0.38) !important;
+}
+
+.popup-menu-content.quick-settings .quick-toggle:checked StIcon,
+.popup-menu-content.quick-settings .quick-toggle:checked StLabel,
+.popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked StIcon {
+  color: #ffffff !important;
+  icon-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+}
+
+.popup-menu-content.quick-settings .quick-toggle-has-menu:checked .quick-toggle-separator {
+  background-color: rgba(255, 255, 255, 0.30) !important;
+}
+
+/* Modo claro: píldora blanca luminosa con texto oscuro */
+.lg-light .popup-menu-content.quick-settings .quick-toggle:checked,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked,
+.lg-light .popup-menu-content.quick-settings .quick-toggle:checked:focus,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked:focus,
+.lg-light .popup-menu-content.quick-settings .quick-toggle:focus:checked,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:focus:checked {
+  color: #1c1c20 !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 1.0) !important;
+}
+
+.lg-light .popup-menu-content.quick-settings .quick-toggle:checked:hover,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked:hover,
+.lg-light .popup-menu-content.quick-settings .quick-toggle:hover:checked,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:hover:checked,
+.lg-light .popup-menu-content.quick-settings .quick-toggle:checked:active,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked:active,
+.lg-light .popup-menu-content.quick-settings .quick-toggle:active:checked,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:active:checked {
+  color: #1c1c20 !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.lg-light .popup-menu-content.quick-settings .quick-toggle:checked StIcon,
+.lg-light .popup-menu-content.quick-settings .quick-toggle:checked StLabel,
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu .quick-toggle-menu-button:checked StIcon {
+  color: #1c1c20 !important;
+  icon-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+  text-shadow: none;
+}
+
+.lg-light .popup-menu-content.quick-settings .quick-toggle-has-menu:checked .quick-toggle-separator {
+  background-color: rgba(0, 0, 0, 0.10) !important;
+}
+
+/* Modo claro: iconos de los botones redondos de arriba en oscuro */
+.lg-light .popup-menu-content.quick-settings .icon-button StIcon,
+.lg-light .popup-menu-content.quick-settings .quick-settings-system-item StIcon,
+.lg-light .popup-menu-content.quick-settings .quick-settings-system-item StLabel {
+  color: #1c1c20 !important;
+}
+
+
+/* ==========================================================================
+   Todo lo que usaba el color de acento de Ubuntu → cristal iluminado
+   ========================================================================== */
+
+/* Día de hoy en el calendario */
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:hover,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:active,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:focus,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:selected,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:focus:hover,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked:hover,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked:focus,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked:active,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:selected:focus,
+.popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:selected:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30) !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+  icon-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+}
+
+/* Botones por defecto (diálogos, notificaciones, menús) */
+.modal-dialog .modal-dialog-button-box .button.default,
+.modal-dialog .modal-dialog-button-box .button.default:hover,
+.modal-dialog .modal-dialog-button-box .button.default:active,
+.modal-dialog .modal-dialog-button-box .button.default:focus,
+.notification-banner .notification-button.default,
+.notification-banner .notification-button.default:hover,
+.notification-banner .notification-button.default:active,
+.notification-banner .notification-button.default:focus,
+.popup-menu-content .button.default,
+.popup-menu-content .button.default:hover,
+.popup-menu-content .button.default:active,
+.popup-menu-content .button.default:focus,
+.popup-menu-content .icon-button.default,
+.popup-menu-content .icon-button.default:hover,
+.popup-menu-content .icon-button.default:active,
+.popup-menu-content .icon-button.default:focus {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30) !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+  icon-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+}
+
+/* Interruptores de los menús (toggle-switch) */
+.popup-menu-content .toggle-switch:checked,
+.popup-menu-content .toggle-switch:checked:hover,
+.popup-menu-content.quick-settings .toggle-switch:checked {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: inset 0 0 10px 0 rgba(255, 255, 255, 0.55) !important;
+}
+
+/* Casillas marcadas */
+.check-box:checked StIcon,
+.check-box:checked:hover StIcon,
+.check-box:checked:active StIcon,
+.modal-dialog .check-box:checked StIcon {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: inset 0 0 8px 0 rgba(255, 255, 255, 0.45) !important;
+}
+
+/* Icono de cabecera de los submenús de ajustes rápidos (WiFi, Bluetooth…) */
+.popup-menu-content.quick-settings .quick-toggle-menu .header .icon.active,
+.quick-toggle-menu .header .icon.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30) !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+  icon-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+}
+
+/* Brillo de teclado */
+.popup-menu-content .keyboard-brightness-level .button:checked,
+.popup-menu-content .keyboard-brightness-level .button:checked:hover,
+.popup-menu-content .keyboard-brightness-level .button:checked:focus,
+.popup-menu-content .keyboard-brightness-level .button:checked:active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30) !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+  icon-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+}
+
+/* Anillos de foco al navegar con teclado */
+.popup-menu-item:focus,
+.popup-sub-menu .popup-menu-item:focus,
+.button:focus,
+.icon-button:focus,
+.overview-tile:focus,
+.app-folder:focus,
+.grid-search-result:focus,
+.list-search-result:focus,
+.search-provider-icon:focus,
+.switcher-list .item-box:focus,
+.message:focus,
+.notification-button:focus,
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:focus,
+.quick-toggle-has-menu .quick-toggle-menu-button:focus,
+.quick-slider .slider-bin:focus,
+.datemenu-today-button:focus,
+.events-button:focus,
+.world-clocks-button:focus,
+.weather-button:focus,
+.calendar .calendar-day:focus,
+.page-navigation-arrow:focus,
+#dashtodockContainer .dash-item-container .overview-tile .overview-icon:focus,
+#dashtodockContainer .dash-item-container .show-apps .overview-icon:focus {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.40) !important;
+}
+
+/* Campos de texto y buscador enfocados */
+StEntry:focus,
+.search-entry:focus {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: inset 0 0 12px 0 rgba(255, 255, 255, 0.18) !important;
+  selection-background-color: rgba(255, 255, 255, 0.35);
+  selected-color: #ffffff;
+}
+
+StEntry {
+  selection-background-color: rgba(255, 255, 255, 0.35);
+  selected-color: #ffffff;
+}
+
+/* Vista previa al anclar ventanas, selección de captura, área de trabajo
+   activa en la vista general, etiquetas de monitor */
+.tile-preview {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  border-radius: 18px;
+  box-shadow: inset 0 0 24px 0 rgba(255, 255, 255, 0.25);
+}
+
+.select-area-rubberband {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.70) !important;
+}
+
+.workspace-thumbnail-indicator {
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.45);
+}
+
+.osd-monitor-label {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30) !important;
+}
+
+.shell-link,
+.shell-link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+}
+
+.candidate-box:selected {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30) !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+  icon-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Modo claro ---------- */
+
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:hover,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:active,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:focus,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:selected,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:focus:hover,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked:hover,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked:focus,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:checked:active,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:selected:focus,
+.lg-light .popup-menu-content.datemenu-popover .calendar .calendar-day.calendar-today:selected:hover {
+  color: #1c1c20 !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 1.0) !important;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.lg-light .modal-dialog .modal-dialog-button-box .button.default,
+.lg-light .modal-dialog .modal-dialog-button-box .button.default:hover,
+.lg-light .modal-dialog .modal-dialog-button-box .button.default:active,
+.lg-light .modal-dialog .modal-dialog-button-box .button.default:focus,
+.lg-light .notification-banner .notification-button.default,
+.lg-light .notification-banner .notification-button.default:hover,
+.lg-light .notification-banner .notification-button.default:active,
+.lg-light .notification-banner .notification-button.default:focus,
+.lg-light .popup-menu-content .button.default,
+.lg-light .popup-menu-content .button.default:hover,
+.lg-light .popup-menu-content .button.default:active,
+.lg-light .popup-menu-content .button.default:focus,
+.lg-light .popup-menu-content .icon-button.default,
+.lg-light .popup-menu-content .icon-button.default:hover,
+.lg-light .popup-menu-content .icon-button.default:active,
+.lg-light .popup-menu-content .icon-button.default:focus {
+  color: #1c1c20 !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 1.0) !important;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.lg-light .popup-menu-content.quick-settings .quick-toggle-menu .header .icon.active,
+.lg-light .quick-toggle-menu .header .icon.active {
+  color: #1c1c20 !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 1.0) !important;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.lg-light .popup-menu-content .toggle-switch:checked,
+.lg-light .popup-menu-content .toggle-switch:checked:hover,
+.lg-light .popup-menu-content.quick-settings .toggle-switch:checked {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.10) !important;
+}
+
+.lg-light .check-box:checked StIcon,
+.lg-light .check-box:checked:hover StIcon,
+.lg-light .check-box:checked:active StIcon,
+.lg-light .modal-dialog .check-box:checked StIcon {
+  color: #1c1c20 !important;
+  background-color: rgba(255, 255, 255, 0.90) !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12) !important;
+}
+
+.lg-light .popup-menu-item:focus,
+.lg-light .popup-sub-menu .popup-menu-item:focus,
+.lg-light .button:focus,
+.lg-light .icon-button:focus,
+.lg-light .overview-tile:focus,
+.lg-light .app-folder:focus,
+.lg-light .grid-search-result:focus,
+.lg-light .list-search-result:focus,
+.lg-light .search-provider-icon:focus,
+.lg-light .switcher-list .item-box:focus,
+.lg-light .message:focus,
+.lg-light .notification-button:focus,
+.lg-light .modal-dialog .modal-dialog-button-box .modal-dialog-button:focus,
+.lg-light .quick-toggle-has-menu .quick-toggle-menu-button:focus,
+.lg-light .quick-slider .slider-bin:focus,
+.lg-light .datemenu-today-button:focus,
+.lg-light .events-button:focus,
+.lg-light .world-clocks-button:focus,
+.lg-light .weather-button:focus,
+.lg-light .calendar .calendar-day:focus,
+.lg-light .page-navigation-arrow:focus,
+.lg-light #dashtodockContainer .dash-item-container .overview-tile .overview-icon:focus,
+.lg-light #dashtodockContainer .dash-item-container .show-apps .overview-icon:focus {
+  box-shadow: inset 0 0 0 2px rgba(28, 28, 32, 0.30) !important;
+}
+
+.lg-light StEntry:focus,
+.lg-light .search-entry:focus {
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: inset 0 0 12px 0 rgba(255, 255, 255, 0.7) !important;
+  selection-background-color: rgba(28, 28, 32, 0.25);
+  selected-color: #1c1c20;
+}
+
+.lg-light .shell-link,
+.lg-light .shell-link:hover {
+  color: #1c1c20 !important;
+  text-shadow: none;
+}
+
+/* ==========================================================================
+   Botón de aplicaciones en la esquina: mismo contenedor que el dock
+   ========================================================================== */
+.lg-apps-frame {
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.10);
+}
+
+.lg-apps-button {
+  border-radius: 26px;
+  color: #ffffff;
+  background-color: transparent;
+  transition-duration: 160ms;
+}
+
+.lg-apps-button:hover {
+  background-color: rgba(255, 255, 255, 0.10);
+}
+
+.lg-apps-button:active,
+.lg-apps-button:checked {
+  background-color: rgba(255, 255, 255, 0.20);
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.30);
+}
+
+.lg-apps-button:checked StIcon {
+  icon-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+}
+
+.lg-light .lg-apps-frame {
+  border-color: rgba(255, 255, 255, 0.30);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
+}
+
+.lg-light .lg-apps-button {
+  color: #1c1c20;
+}
+
+.lg-light .lg-apps-button:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.lg-light .lg-apps-button:active,
+.lg-light .lg-apps-button:checked {
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 1.0);
+}
+
+/* ==========================================================================
+   Pantalla de bloqueo: mismo lenguaje de cristal
+   (siempre en versión oscura: va sobre el fondo desenfocado y oscurecido)
+   ========================================================================== */
+
+/* Reloj: fino y luminoso */
+.unlock-dialog-clock .unlock-dialog-clock-time {
+  font-weight: 200 !important;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.35);
+}
+
+.unlock-dialog-clock .unlock-dialog-clock-date {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.unlock-dialog-clock .unlock-dialog-clock-hint {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+/* Campo de contraseña: píldora de cristal */
+.unlock-dialog .login-dialog-prompt-entry,
+.lg-light .unlock-dialog .login-dialog-prompt-entry {
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  background-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.18) !important;
+  selection-background-color: rgba(255, 255, 255, 0.35);
+  selected-color: #ffffff;
+}
+
+.unlock-dialog .login-dialog-prompt-entry:hover,
+.lg-light .unlock-dialog .login-dialog-prompt-entry:hover {
+  background-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+.unlock-dialog .login-dialog-prompt-entry:focus,
+.lg-light .unlock-dialog .login-dialog-prompt-entry:focus {
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.22) !important;
+}
+
+.unlock-dialog .login-dialog-prompt-entry StLabel,
+.lg-light .unlock-dialog .login-dialog-prompt-entry StLabel {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Botones redondos (cancelar, cambiar de usuario, accesibilidad…) */
+.unlock-dialog .login-dialog-button,
+.unlock-dialog .login-dialog-button.cancel-button,
+.unlock-dialog .login-dialog-button.switch-user-button,
+.unlock-dialog .login-dialog-button.a11y-button,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button {
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  background-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.16) !important;
+}
+
+.unlock-dialog .login-dialog-button:hover,
+.unlock-dialog .login-dialog-button:focus {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: inset 0 0 12px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.unlock-dialog .login-dialog-button:active,
+.unlock-dialog .login-dialog-button:checked {
+  background-color: rgba(255, 255, 255, 0.24) !important;
+  box-shadow: inset 0 0 14px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Usuario */
+.unlock-dialog .user-widget-label {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.30);
+}
+
+/* Avisos y notificaciones en la pantalla de bloqueo */
+.unlock-dialog-notifications-container .unlock-dialog-notification-source,
+.unlock-dialog-notifications-container .notification,
+.unlock-dialog-notifications-container .message {
+  color: #ffffff !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source:hover,
+.unlock-dialog-notifications-container .message:hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+.unlock-dialog-notifications-container StLabel,
+.unlock-dialog-notifications-container StIcon {
+  color: #ffffff !important;
+}
+
+/* Mensajes (contraseña incorrecta, bloq. mayús.) */
+.unlock-dialog .login-dialog-message,
+.unlock-dialog .caps-lock-warning-label,
+.unlock-dialog .login-dialog-message-warning {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Barra superior en la pantalla de bloqueo: GNOME le pone la clase
+   .unlock-screen y blur-my-shell no le da su forma, así que la redondeamos
+   aquí como píldora de cristal. */
+#panel.lg-panel.unlock-screen,
+#panel.lg-panel.login-screen {
+  border-radius: 999px !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+#panel.lg-panel.unlock-screen .panel-button,
+#panel.lg-panel.unlock-screen .panel-button StLabel,
+#panel.lg-panel.unlock-screen .panel-button StIcon {
+  color: #ffffff !important;
+}

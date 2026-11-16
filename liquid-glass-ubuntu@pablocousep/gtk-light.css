@@ -1,0 +1,390 @@
+/* ==========================================================================
+   Liquid Glass (modo claro) para apps GTK / libadwaita
+   Gestionado por la extensión Liquid Glass: se copia a
+   ~/.config/gtk-{3,4}.0/gtk.css al cambiar a modo claro.
+   ========================================================================== */
+
+window.background,
+window.background.csd {
+  background-color: rgba(244, 244, 247, 0.72);
+  background-image: none;
+}
+
+window.background .view,
+window.background textview > text,
+window.background columnview,
+window.background listview,
+window.background .content-pane,
+window.background toolbarview > .content {
+  background-color: rgba(255, 255, 255, 0.40);
+}
+
+window.background .sidebar,
+window.background .sidebar-pane,
+window.background .navigation-sidebar,
+window.background .sidebar-pane .navigation-sidebar {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+window.background headerbar,
+window.background .titlebar,
+window.background toolbarview > .top-bar,
+window.background toolbarview > .bottom-bar,
+window.background searchbar > revealer > box,
+window.background actionbar > revealer > box {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+.card,
+list.boxed-list,
+.boxed-list,
+listview.card {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+list.boxed-list > row:first-child,
+.boxed-list > row:first-child { border-top-left-radius: 18px; border-top-right-radius: 18px; }
+list.boxed-list > row:last-child,
+.boxed-list > row:last-child { border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; }
+
+button.text-button:not(.flat),
+button.suggested-action,
+button.destructive-action,
+button.pill,
+button.circular {
+  border-radius: 999px;
+}
+
+button.suggested-action,
+button.destructive-action {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.0));
+}
+
+entry,
+searchbar entry,
+.search entry {
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(0, 0, 0, 0.07);
+}
+
+switch {
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.08);
+}
+switch > slider {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.20), inset 0 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Menús y popovers: mismo tono que el dock (medido sobre el escritorio). Sin sombra exterior para que la superficie
+   del menú coincida con su forma (el desenfoque de blur-my-shell va detrás
+   de toda la superficie, con radio 15). */
+popover > contents,
+popover.menu > contents {
+  background-color: rgba(218, 218, 223, 0.90);
+  border-radius: 15px;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.85),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+popover > arrow { background-color: rgba(218, 218, 223, 0.90); }
+
+popover modelbutton,
+popover.menu modelbutton {
+  border-radius: 12px;
+}
+
+dialog.floating sheet,
+window.dialog.message .dialog-contents,
+.dialog-contents {
+  background-color: rgba(248, 248, 250, 0.92);
+}
+dialog.floating sheet,
+dialog.alert.floating sheet {
+  border-radius: 28px;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.95),
+    0 0 0 1px rgba(0, 0, 0, 0.07),
+    0 18px 44px rgba(0, 0, 0, 0.20);
+}
+
+toast {
+  border-radius: 999px;
+  color: #1c1c20;
+  background-color: rgba(250, 250, 252, 0.90);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.95), 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Botones de la barra de título y controles de ventana: planos y redondos,
+   sin borde ni degradado; sólo un fondo suave al pasar el ratón. */
+headerbar button,
+headerbar menubutton > button,
+headerbar splitbutton > button,
+headerbar splitbutton > menubutton > button,
+.titlebar button,
+windowcontrols > button {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 999px;
+}
+
+headerbar button:hover,
+headerbar menubutton > button:hover,
+headerbar splitbutton > button:hover,
+.titlebar button:hover,
+windowcontrols > button:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+headerbar button:active,
+headerbar button:checked,
+headerbar menubutton > button:active,
+headerbar menubutton > button:checked,
+.titlebar button:active,
+windowcontrols > button:active {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+windowcontrols > button > image {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Ptyxis (terminal): su cabecera usa el color de la paleta; la dejamos de
+   cristal, igual que el cuerpo, para que la ventana sea una sola pieza. */
+window .window-contents > revealer windowhandle,
+window:backdrop .window-contents > revealer windowhandle,
+window .window-contents revealer.raised.top-bar {
+  background-color: transparent;
+}
+
+/* Contorno de cristal de la ventana */
+window.csd {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.45),
+    inset 0 1px rgba(255, 255, 255, 0.60),
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+window.csd:backdrop {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 6px 18px rgba(0, 0, 0, 0.12);
+}
+window.csd.maximized,
+window.csd.fullscreen,
+window.csd.tiled,
+window.csd.tiled-top,
+window.csd.tiled-bottom,
+window.csd.tiled-left,
+window.csd.tiled-right {
+  box-shadow: none;
+}
+
+/* Terminal (Ptyxis): sin fondo propio, sólo el cristal del dock detrás.
+   (gtk.css del usuario tiene prioridad sobre el color de paleta de Ptyxis). */
+window.ptyxis-window,
+window.ptyxis-window.background,
+window.ptyxis-window .window-contents,
+window.ptyxis-window headerbar.main-header-bar,
+window.ptyxis-window .visual-bell-area,
+window.ptyxis-window vte-terminal {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+/* Terminal: el mismo borde que el dock en modo claro */
+window.ptyxis-window.csd {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.30),
+    inset 0 1px rgba(255, 255, 255, 0.35);
+}
+window.ptyxis-window.csd.maximized,
+window.ptyxis-window.csd.fullscreen,
+window.ptyxis-window.csd.tiled {
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   Color de acento → cristal (modo claro): grafito translúcido con brillo,
+   para que se distinga sobre fondos claros.
+   ========================================================================== */
+:root {
+  --accent-bg-color: rgba(40, 40, 48, 0.72);
+  --accent-fg-color: #ffffff;
+  --accent-color: #2a2a32;
+}
+@define-color accent_bg_color rgba(40, 40, 48, 0.72);
+@define-color accent_fg_color #ffffff;
+@define-color accent_color #2a2a32;
+@define-color theme_selected_bg_color rgba(40, 40, 48, 0.72);
+@define-color theme_selected_fg_color #ffffff;
+
+button.suggested-action,
+button.default,
+switch:checked,
+checkbutton check:checked,
+checkbutton radio:checked,
+progressbar > trough > progress,
+scale > trough > highlight,
+list row:selected,
+.navigation-sidebar row:selected {
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.35), inset 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   Menús contextuales GTK3 (p. ej. clic derecho en el escritorio):
+   la ventanita del menú transparente y el menú como cristal redondeado.
+   ========================================================================== */
+window.popup,
+window.popup.background,
+window.background.popup,
+.csd.popup {
+  background-color: transparent;
+  background-image: none;
+}
+
+.csd.popup decoration,
+.popup decoration {
+  border-radius: 15px;
+  background-color: transparent;
+  /* sin sombra: la ventana del menú mide lo mismo que el menú y el
+     desenfoque (radio 15) coincide con sus esquinas */
+  box-shadow: none;
+  margin: 0;
+  border: none;
+}
+
+menu,
+.menu,
+.context-menu {
+  color: #1c1c20;
+  background-color: rgba(218, 218, 223, 0.90);
+  border-radius: 15px;
+  border: none;
+  padding: 6px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.90), inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+menu menuitem,
+.menu menuitem,
+.context-menu menuitem {
+  border-radius: 9px;
+  padding: 6px 12px;
+}
+
+menu menuitem:hover,
+.menu menuitem:hover,
+.context-menu menuitem:hover {
+  color: #1c1c20;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+menu separator,
+.menu separator,
+.context-menu separator {
+  background-color: rgba(0, 0, 0, 0.08);
+  margin: 4px 8px;
+}
+
+/* Las ventanitas de menú también tienen la clase .csd: sin el contorno ni
+   la línea de luz de las ventanas normales (eran la línea recta de arriba). */
+window.csd.popup,
+window.csd.popup:backdrop,
+window.popup.csd {
+  box-shadow: none;
+  border: none;
+}
+
+/* ==========================================================================
+   Ventanas maximizadas, a pantalla completa o en mosaico: opacas, sin el
+   efecto de cristal (que sólo tiene sentido con algo detrás).
+   ========================================================================== */
+window.background.maximized,
+window.background.fullscreen,
+window.background.tiled,
+window.background.tiled-top,
+window.background.tiled-bottom,
+window.background.tiled-left,
+window.background.tiled-right {
+  background-color: rgb(246, 246, 248);
+}
+
+window.background.maximized .view,
+window.background.maximized textview > text,
+window.background.maximized columnview,
+window.background.maximized listview,
+window.background.maximized .content-pane,
+window.background.maximized toolbarview > .content,
+window.background.fullscreen .view,
+window.background.fullscreen toolbarview > .content,
+window.background.tiled .view,
+window.background.tiled toolbarview > .content {
+  background-color: rgb(255, 255, 255);
+}
+
+window.background.maximized .sidebar,
+window.background.maximized .sidebar-pane,
+window.background.maximized .navigation-sidebar,
+window.background.tiled .sidebar,
+window.background.tiled .sidebar-pane,
+window.background.tiled .navigation-sidebar {
+  background-color: rgb(235, 235, 238);
+}
+
+window.background.maximized headerbar,
+window.background.maximized .titlebar,
+window.background.maximized toolbarview > .top-bar,
+window.background.maximized toolbarview > .bottom-bar,
+window.background.tiled headerbar,
+window.background.tiled toolbarview > .top-bar {
+  background-color: rgb(246, 246, 248);
+}
+
+/* Terminal maximizada: fondo opaco */
+window.ptyxis-window.maximized,
+window.ptyxis-window.fullscreen,
+window.ptyxis-window.tiled,
+window.ptyxis-window.tiled-left,
+window.ptyxis-window.tiled-right {
+  background-color: rgb(255, 255, 255);
+}
+
+/* ==========================================================================
+   Iconos del escritorio: resaltado ajustado sólo al icono (no a toda la
+   celda con el nombre), como cristal; el nombre se marca con una píldora.
+   ========================================================================== */
+.file-item.file-item-hover,
+.file-item.desktop-icons-selected,
+.file-item.desktop-icons-keyboard-selected {
+  background-color: transparent;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.file-item-hover image {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+}
+
+.desktop-icons-selected image,
+.desktop-icons-keyboard-selected image {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85);
+}
+
+.desktop-icons-selected label,
+.desktop-icons-keyboard-selected label {
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 6px;
+  padding: 0 4px;
+}

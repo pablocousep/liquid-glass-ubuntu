@@ -1,0 +1,14 @@
+{
+  "uuid": "liquid-glass-ubuntu@pablocousep",
+  "name": "Liquid Glass",
+  "description": "Estética Liquid Glass (iOS 26) para GNOME en Ubuntu, en una sola extensión: incluye dash-to-dock, blur-my-shell y rounded-windows, más barra flotante autoocultable, botón de aplicaciones en la esquina, menús, notificaciones y apps GTK de cristal, con modo claro y oscuro.",
+  "shell-version": [
+    "50"
+  ],
+  "version": 1,
+  "session-modes": [
+    "user",
+    "unlock-dialog"
+  ],
+  "url": "https://github.com/pablocousep/liquid-glass-ubuntu"
+}
